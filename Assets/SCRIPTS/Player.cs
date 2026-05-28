@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,13 @@ public class Player : MonoBehaviour
 
     [Header("Player Inputs")]
     [SerializeField] InputActionReference moveAction;
+    [SerializeField] InputActionReference InteractAction;
+
+    [Header("Player Interact")]
+    [SerializeField] private float radius = 2f;
+    [SerializeField] private LayerMask interactableLayers;
+    private Collider[] buffer = new Collider[32];
+    private IInteractable focused;
 
     CharacterController characterController;
 
@@ -38,11 +46,22 @@ public class Player : MonoBehaviour
        UpdateGroundedState();
        ApplyGravity();
        ApplyMovement();
+
+        IInteractable nearest = FindNearestInteractable();
+        UpdateFocus(nearest);
     }
 
     void ReadInput()
     { 
         moveInput = moveAction.action.ReadValue<Vector2>().normalized;
+
+        if (focused != null && InteractAction.action.WasPressedThisFrame())
+        {
+            if (focused.CanInteract())
+            {
+                focused.Interact();
+            }
+        }
     }
     void UpdateGroundedState()
     {
@@ -64,5 +83,42 @@ public class Player : MonoBehaviour
         Vector3 horizontal = move * moveSpeed;
         Vector3 finalmove = horizontal + Vector3.up * velocity.y;
         characterController.Move(finalmove * Time.deltaTime);
+    }
+
+    private IInteractable FindNearestInteractable()
+    {
+        int count = Physics.OverlapSphereNonAlloc(transform.position, radius, buffer, interactableLayers, QueryTriggerInteraction.Collide);
+        IInteractable nearest = null;
+        float bestDistSq = float.MaxValue;
+
+        for (int i = 0; i < count; i++)
+        {
+            Collider col = buffer[i];
+            if (col == null) continue;
+            IInteractable interactable = col.GetComponentInParent<IInteractable>();
+            if (interactable == null) continue;
+            if (!interactable.CanInteract()) continue;
+            float distSq = (col.transform.position - transform.position).sqrMagnitude;
+            if (distSq < bestDistSq)
+            {
+                bestDistSq = distSq;
+                nearest = interactable;
+            }
+        }
+        return nearest;
+    }
+
+    private void UpdateFocus(IInteractable nearest)
+    {
+        if (ReferenceEquals(focused, nearest)) return;
+        focused?.OnFocusLost();
+        focused = nearest;
+        focused?.OnFocusGained();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
