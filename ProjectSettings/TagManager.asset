@@ -6,6 +6,8 @@ TagManager:
   tags:
   - NPC
   - Collect
+  - limit
+  - bullet
   layers:
   - Default
   - TransparentFX

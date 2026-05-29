@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
 
     CharacterController characterController;
 
+    [SerializeField] private InteractionPrompt prompt;
+
     Vector2 moveInput;
     Vector3 velocity;
     bool isGrounded; 
@@ -113,7 +115,15 @@ public class Player : MonoBehaviour
         if (ReferenceEquals(focused, nearest)) return;
         focused?.OnFocusLost();
         focused = nearest;
-        focused?.OnFocusGained();
+        if (focused != null)
+        {
+            focused.OnFocusGained();
+            prompt.Show(focused);
+        }
+        else
+        {
+            prompt.Hide();
+        }
     }
 
     private void OnDrawGizmos()
