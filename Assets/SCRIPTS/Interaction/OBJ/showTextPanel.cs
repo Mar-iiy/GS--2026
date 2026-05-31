@@ -1,19 +1,21 @@
 using System;
 using System.Collections;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class showTextPanel : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
-    [SerializeField] private TextAsset thoughtText;
+    [SerializeField] private TextAsset[] thoughtText;
     [SerializeField] private TextMeshProUGUI panelText;
 
+    private int randomThought;
     [SerializeField] private float wait;
     void Start()
     {
         panel.SetActive(false);
+
     }
     public void ShowPanel()
     {
@@ -22,7 +24,9 @@ public class showTextPanel : MonoBehaviour
     IEnumerator timerPanel()
     {
         panel.SetActive(true);
-        panelText.text = thoughtText.text;
+        randomThought = Random.Range(0, thoughtText.Length);
+        panelText.text = thoughtText[randomThought].text;
+       
         yield return new WaitForSeconds(wait);
         panel.SetActive(false);
     }
