@@ -8,7 +8,7 @@ public class InteractionPrompt : MonoBehaviour
     [SerializeField] private Vector3 worldOffset = new(0f, 1f, 0f);
     [SerializeField] private string keyHint = "[E]";
 
-    private Camera cam;
+    [SerializeField] private Camera cam;
     private Transform target;
     private Canvas canvas;
     private RectTransform canvasRect;
@@ -33,6 +33,7 @@ public class InteractionPrompt : MonoBehaviour
         Vector3 worldPos = target.position + worldOffset;
         Vector3 screenPos = cam.WorldToScreenPoint(worldPos);
         Camera uiCam = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : cam;
+        
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPos, uiCam, out Vector2 localPoint))
         {
             labelRect.anchoredPosition = localPoint;

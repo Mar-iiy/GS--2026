@@ -1,38 +1,49 @@
-using Unity.VisualScripting;
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Rendering;
+using UnityEngine;
 
 public class PointShoot : MonoBehaviour
 {
     [SerializeField] private GameObject aim;
     [SerializeField] private Transform laserPoint;
     [SerializeField] private GameObject bullet;
-
-
-
-    private Camera mainCam;
+    
+    [SerializeField] private Camera mainCam;
+    
     private Vector3 target;
+    [SerializeField] private float distanceFromCamera = 10f;
+    [SerializeField] private Transform resetPosition;
+
     private bool bulletFired;
-    void Start()
-    {
-        mainCam = Camera.main;
-    }
+
     void Update()
     {
-        target = Input.mousePosition;
-        target.z = mainCam.WorldToScreenPoint(aim.transform.position).z;
-        target = mainCam.ScreenToWorldPoint(target);
-        aim.transform.position = target;
-        ShootInput();
-        Shoot();
-    }
+        if (changeToComputer.computerIsOn)
+        {
+            target = Input.mousePosition;
+            target.z = distanceFromCamera;
+            target = mainCam.ScreenToWorldPoint(target);
+            aim.transform.position = target;
+            ShootInput();
+            Shoot();
+        }
 
+        else
+        {
+            aim.transform.position = resetPosition.position;
+        }
+    }
+       
     void ShootInput()
     {
-        if (Input.GetMouseButtonDown(0) && !bulletFired)
-        { 
-            bulletFired = true;
+        if(changeToComputer.computerIsOn)
+        {
+           if (Input.GetMouseButtonDown(0) && !bulletFired)
+           { 
+             bulletFired = true;
+           }
         }
     }
 

@@ -24,5 +24,10 @@ public class SpaceJunk : MonoBehaviour
             Destroy(this.gameObject);
             showPoints.pontos++;
         }
+
+        if(!changeToComputer.computerIsOn)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

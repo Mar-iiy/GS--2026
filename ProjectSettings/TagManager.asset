@@ -8,6 +8,7 @@ TagManager:
   - Collect
   - limit
   - bullet
+  - Camera
   layers:
   - Default
   - TransparentFX

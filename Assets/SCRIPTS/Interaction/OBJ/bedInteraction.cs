@@ -1,10 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class bedInteraction : MonoBehaviour
 {
-    void layDown()
+    [SerializeField] GameObject nightPanel;
+
+    public static bool changedLevel;
+
+    private void Start()
     {
-        if(dayTaskSystem.allTaskDone)
+        nightPanel.SetActive(false);
+    }
+    public void LayDown()
+    {
+        if(TaskManager.allTasksAreDone)
         {
             dayTaskSystem.dayCount++;
         }
@@ -12,5 +21,10 @@ public class bedInteraction : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void LevelChange()
+    {
+        nightPanel.SetActive(true);
     }
 }
