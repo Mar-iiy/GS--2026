@@ -12,7 +12,6 @@ public class TaskItem : MonoBehaviour
     [SerializeField] private Image taskImage;                 
     [SerializeField] private Sprite[] sprites;
 
-    // State of this specific task
     public bool isCompleted = false;
 
     private void Start()

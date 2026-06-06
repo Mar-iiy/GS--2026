@@ -47,6 +47,8 @@ public class changeToComputer : MonoBehaviour
     {
         if (computerIsOn)
         {
+            Cursor.lockState = CursorLockMode.None;
+
             uiNave.SetActive(false);
             uiComputador.SetActive(true);
 
@@ -59,6 +61,8 @@ public class changeToComputer : MonoBehaviour
 
     private void computeIsOff()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         uiNave.SetActive(true);
         uiComputador.SetActive(false);
 

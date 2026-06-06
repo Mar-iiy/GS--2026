@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour, IInteractable
         outline = gameObject.AddComponent<Outline>();
         outline.OutlineMode = Outline.Mode.OutlineVisible;
         outline.OutlineColor = Color.yellow;
-        outline.OutlineWidth = 4f;
+        outline.OutlineWidth = 7f;
         outline.enabled = false;
     }
     public void Interact()

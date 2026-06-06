@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MENU.unity
     guid: 4384d46d440a3734cb85bc33954e82e3
   - enabled: 1
-    path: Assets/Scenes/gameplay 1.unity
-    guid: b2e54ed2d4d26a4448fa0b3766b37957
+    path: Assets/Scenes/LEVELS/LEVEL01.unity
+    guid: 13fedf599f3853d49aae3810743720ef
   - enabled: 1
-    path: Assets/Scenes/TrashGameplay 1.unity
-    guid: e0d5fb3e60fe32f4fb15962d283f4179
+    path: Assets/Scenes/teste02.unity
+    guid: 8c8ffb24123ee8a4b86b5ec27c0977e5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
