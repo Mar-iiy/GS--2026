@@ -13,6 +13,7 @@ public class TrashInteract : MonoBehaviour
     {
         if(HoldingItem.isHolding && trashId == HoldingItem.holdingId)
         {
+            PlaySound();
             HoldingItem.isHolding = false;
             HoldingItem.holdingId = 0;
             SortTrashTask.totalTrash++;

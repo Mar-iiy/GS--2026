@@ -21,6 +21,7 @@ public class SortTrashTask : MonoBehaviour
     {
         HoldingItem.isHolding = false;
         totalTrash = 0;
+        taskComplete = false;
     }
 
     void Update()

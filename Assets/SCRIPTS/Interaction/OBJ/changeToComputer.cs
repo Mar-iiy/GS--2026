@@ -10,6 +10,7 @@ public class changeToComputer : MonoBehaviour
 
     [Header("UI")]
     [SerializeField] private GameObject uiNave;
+    [SerializeField] private GameObject thoughtPanel;
 
     [Header("Spawn Settings")]
     [SerializeField] private float wait;
@@ -62,6 +63,7 @@ public class changeToComputer : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
 
             uiNave.SetActive(false);
+            thoughtPanel.SetActive(false);
 
             cameraNave.enabled = false;
             cameraComputador.enabled = true;
@@ -77,6 +79,7 @@ public class changeToComputer : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
         uiNave.SetActive(true);
+        thoughtPanel.SetActive(true);
 
         cameraComputador.enabled = false;
         cameraNave.enabled = true;
@@ -102,8 +105,8 @@ public class changeToComputer : MonoBehaviour
     {
         while (computerIsOn)
         {
-                Instantiate(objPrefab, new Vector3(Random.Range(-8, 8), Random.Range(-3, 5), 15), Quaternion.identity);
-                yield return new WaitForSeconds(wait);
+            Instantiate(objPrefab, new Vector3(Random.Range(-8, 8), Random.Range(-3, 5), 15), Quaternion.identity);
+            yield return new WaitForSeconds(wait);
         }
     }
 }
