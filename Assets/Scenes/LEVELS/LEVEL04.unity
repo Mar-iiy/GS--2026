@@ -1903,7 +1903,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 1, g: 0.37254903, b: 0.14509805, a: 1}
+  m_Color: {r: 0.626617, g: 0.14509803, b: 1, a: 1}
   m_Intensity: 41
   m_Range: 13.88
   m_SpotAngle: 30
@@ -3662,7 +3662,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 1, g: 0.37254903, b: 0.14509805, a: 1}
+  m_Color: {r: 0.14509803, g: 0.18958141, b: 1, a: 1}
   m_Intensity: 41
   m_Range: 13.88
   m_SpotAngle: 30
@@ -6544,9 +6544,9 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4900000, guid: 1b3636099d69013489ef1fc4746e7825, type: 3}
+      - m_Target: {fileID: 1279231648}
         m_TargetAssemblyTypeName: showTextPanel, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ShowPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6556,9 +6556,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4900000, guid: 8f81467304dd076408652d67625b24c3, type: 3}
+      - m_Target: {fileID: 1279231654}
         m_TargetAssemblyTypeName: TaskItem, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: CompleteTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6568,9 +6568,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4900000, guid: 42de983cc6224dd448afb590a4967f72, type: 3}
+      - m_Target: {fileID: 1279231654}
         m_TargetAssemblyTypeName: TaskItem, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: PlaySound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6982,7 +6982,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 1, g: 0.37254903, b: 0.14509805, a: 1}
+  m_Color: {r: 0.45919374, g: 0.14509803, b: 1, a: 1}
   m_Intensity: 85.8
   m_Range: 12.42
   m_SpotAngle: 30
@@ -7342,7 +7342,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 1, g: 0.37254903, b: 0.14509805, a: 1}
+  m_Color: {r: 0.25801224, g: 0.14509803, b: 1, a: 1}
   m_Intensity: 85.8
   m_Range: 12.42
   m_SpotAngle: 30
@@ -7600,6 +7600,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 1b62c4cbe2ce3514794ee79565650ccb, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5c1014104fafdcf47bcd2b6d7fd5fe62, type: 2}
     - target: {fileID: 919132149155446097, guid: 1b62c4cbe2ce3514794ee79565650ccb, type: 3}
       propertyPath: m_Name
       value: Pote_Agua
@@ -10032,7 +10036,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 0.90588236, g: 0.5294118, b: 0.20784314, a: 1}
+  m_Color: {r: 0.39356536, g: 0.20784314, b: 0.90588236, a: 1}
   m_Intensity: 76.01
   m_Range: 15.8
   m_SpotAngle: 30
@@ -10195,6 +10199,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a5b51f57a8b344442898d6a0561e3f9a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d5355c683f2d127438bf7f40017c1255, type: 2}
     - target: {fileID: 919132149155446097, guid: a5b51f57a8b344442898d6a0561e3f9a, type: 3}
       propertyPath: m_Name
       value: Pote_Comida
@@ -10501,7 +10509,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: d22e5d173285dd746b94922c87fa53ae, type: 2}
+  sharedProfile: {fileID: 11400000, guid: bc05cedbadf7ac14d9307fba38d9e633, type: 2}
 --- !u!4 &2039694698
 Transform:
   m_ObjectHideFlags: 0
@@ -10988,7 +10996,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 2
-  m_Color: {r: 0.8117647, g: 0.12941177, b: 0, a: 1}
+  m_Color: {r: 0.7016194, g: 0, b: 0.8117647, a: 1}
   m_Intensity: 13.38
   m_Range: 10.5
   m_SpotAngle: 30
