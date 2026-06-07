@@ -23,7 +23,7 @@ public class TrashTask : MonoBehaviour
 
     public void SpawnRandomPrefab()
     {
-        if (changeToComputer.computerIsOn)
+        if (changeToComputer.computerUsed)
         {
 
             if (spawnCount >= maxSpawns)

@@ -12,11 +12,16 @@ public class TaskItem : MonoBehaviour
     [SerializeField] private Image taskImage;                 
     [SerializeField] private Sprite[] sprites;
 
+    [Header("AUDIO")]
+    [SerializeField] private AudioClip audioEfeito;
+    [SerializeField] AudioSource audio;
+
     public bool isCompleted = false;
 
     private void Start()
     {
-        isCompleted = false;
+       audio = GetComponent<AudioSource>();
+       isCompleted = false;
     }
 
     private void Update()
@@ -27,6 +32,19 @@ public class TaskItem : MonoBehaviour
     public void CompleteTask()
     {
         isCompleted = true;
+    }
+
+    public void PlaySound()
+    {
+        if (!audio.isPlaying)
+        {
+            audio.clip = audioEfeito;
+            audio.Play();
+        }
+        else
+        {
+            audio.Stop();
+        }
     }
 
     private void showTaskUI()

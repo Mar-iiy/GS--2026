@@ -13,9 +13,10 @@ public class Player : MonoBehaviour
     [SerializeField] InputActionReference moveAction;
     [SerializeField] InputActionReference lookAction;
     [SerializeField] InputActionReference InteractAction;
+    [SerializeField] InputActionReference PauseAction;
 
     [Header("Look Settings")]
-    [SerializeField] Transform playerCamera; // Arraste a câmera aqui
+    [SerializeField] Transform playerCamera; 
     [SerializeField] float sensitivity = 0.1f;
     float xRotation = 0f;
 
@@ -39,24 +40,29 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     bool isGrounded;
 
+    public static bool isPaused;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         audio = GetComponent<AudioSource>();
         animator = GetComponentInChildren<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
+        isPaused = false;
     }
 
     private void OnEnable()
     {
         moveAction.action.Enable();
         lookAction.action.Enable();
+        PauseAction.action.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.action.Disable();
-        lookAction.action.Disable(); 
+        lookAction.action.Disable();
+        PauseAction.action.Disable(); 
     }
 
     void Update()
@@ -89,10 +95,10 @@ public class Player : MonoBehaviour
         UpdateFocus(nearest);
     }
     void ReadInput()
-    { 
+    {
         moveInput = moveAction.action.ReadValue<Vector2>().normalized;
 
-        lookInput = lookAction.action.ReadValue<Vector2>(); // 
+        lookInput = lookAction.action.ReadValue<Vector2>();
 
         if (focused != null && InteractAction.action.WasPressedThisFrame())
         {
@@ -100,6 +106,11 @@ public class Player : MonoBehaviour
             {
                 focused.Interact();
             }
+        }
+
+        if (!isPaused && PauseAction.action.WasPressedThisFrame())
+        { 
+            isPaused = true;
         }
     }
     void UpdateGroundedState()
@@ -118,11 +129,13 @@ public class Player : MonoBehaviour
 
     void ApplyMovement()
     {
-
+        if(!isPaused)
+        {
             Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
             Vector3 horizontal = move * moveSpeed;
             Vector3 finalmove = horizontal + Vector3.up * velocity.y;
             characterController.Move(finalmove * Time.deltaTime);
+        }  
     }
 
     void HandleLook()

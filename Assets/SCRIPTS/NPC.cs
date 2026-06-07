@@ -14,11 +14,17 @@ public class NPC : MonoBehaviour
     [Header("Animation")]
     [SerializeField] private Animator animator;
 
+    [Header("AUDIO")]
+    [SerializeField] private AudioClip audioLatido;
+    [SerializeField] AudioSource audio;
+
+    private Outline outline;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-
+        outline = GetComponent<Outline>();
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,5 +46,18 @@ public class NPC : MonoBehaviour
     public void playParticle()
     {
         particle.Play();
+    }
+
+    public void PlaySound()
+    {
+        if (!audio.isPlaying)
+        {
+                audio.clip = audioLatido;
+                audio.Play();
+        }
+        else
+        {
+            audio.Stop();
+        }
     }
 }

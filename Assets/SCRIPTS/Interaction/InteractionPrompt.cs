@@ -30,6 +30,7 @@ public class InteractionPrompt : MonoBehaviour
         {
             label.gameObject.SetActive(true);
         }
+
         Vector3 worldPos = target.position + worldOffset;
         Vector3 screenPos = cam.WorldToScreenPoint(worldPos);
         Camera uiCam = canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : cam;
