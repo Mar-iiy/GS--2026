@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -4075,7 +4075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -5326,7 +5326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -5908,7 +5908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -6691,7 +6691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -8369,7 +8369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
@@ -8763,7 +8763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
+  displayName: Interagir
   isEnabled: 1
   onInteract:
     m_PersistentCalls:
