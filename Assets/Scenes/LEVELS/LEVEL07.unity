@@ -5413,8 +5413,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1132069503}
   - component: {fileID: 1132069506}
-  - component: {fileID: 1132069505}
-  - component: {fileID: 1132069504}
   m_Layer: 0
   m_Name: TUBO
   m_TagString: Untagged
@@ -5438,53 +5436,6 @@ Transform:
   - {fileID: 1439057837}
   m_Father: {fileID: 1184461358}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1132069504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132069502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b7057e849f1aff4ba9f0de6e8bdcf51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrashTask
-  trash:
-  - {fileID: 1134546675007161870, guid: 3d7d211b29feae64fa4a538646352d1b, type: 3}
-  - {fileID: 6758374864241786942, guid: 5a56ff680ed97ff40b2a6f9f2879a22b, type: 3}
-  - {fileID: 8658620824715803403, guid: 7ccb52ce77e22c441ad2d2b4b05449d1, type: 3}
-  spawnPoint: {fileID: 94982062}
-  maxSpawns: 10
---- !u!114 &1132069505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132069502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c784aa85020d9fa41930954c0e6f5072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  displayName: Interact
-  isEnabled: 1
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1132069504}
-        m_TargetAssemblyTypeName: TrashTask, Assembly-CSharp
-        m_MethodName: SpawnRandomPrefab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!136 &1132069506
 CapsuleCollider:
   m_ObjectHideFlags: 0
