@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class changeToComputer : MonoBehaviour
@@ -18,7 +17,6 @@ public class changeToComputer : MonoBehaviour
 
     [Header("AUDIO")]
     [SerializeField] private AudioClip audioVent;
-    [SerializeField] AudioSource audio;
 
     [SerializeField] public static bool computerIsOn;
     [SerializeField] public static bool computerUsed;
