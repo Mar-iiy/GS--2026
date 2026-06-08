@@ -8,7 +8,7 @@ public class TrashTask : MonoBehaviour
     private GameObject currentObject;
 
     private int spawnCount = 0;
-    public int maxSpawns = 10;
+    [SerializeField] public int maxSpawns;
 
     void Update()
     {

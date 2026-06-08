@@ -5209,7 +5209,7 @@ MonoBehaviour:
   - {fileID: 6758374864241786942, guid: 5a56ff680ed97ff40b2a6f9f2879a22b, type: 3}
   - {fileID: 8658620824715803403, guid: 7ccb52ce77e22c441ad2d2b4b05449d1, type: 3}
   spawnPoint: {fileID: 94982062}
-  maxSpawns: 10
+  maxSpawns: 8
 --- !u!114 &1132069505
 MonoBehaviour:
   m_ObjectHideFlags: 0
